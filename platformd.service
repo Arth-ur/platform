@@ -1,0 +1,9 @@
+[Unit]
+Description=Platform server
+After=network.target
+
+[Service]
+Type=forking
+PIDFile=/var/run/platform.pid
+ExecStart=/usr/local/bin/serve-platform.py
+ExecStop=/usr/sbin/postfix stop
